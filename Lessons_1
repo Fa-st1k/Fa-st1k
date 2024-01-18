@@ -2,7 +2,8 @@ import math
 import time
 
 
-n = 998
+n = 100
+
 
 tic = time.perf_counter()
 print("math", math.factorial(n))
@@ -42,10 +43,17 @@ def factorial3(n):
     return factorial2
 
 
-print("for ",factorial3(998))
+print("for ",factorial3(100))
 
 toc = time.perf_counter()
 print(f"Вычисление заняло {toc - tic:0.4f} секунд")
 
 
-# 
+
+n = 100
+
+def fact_math(n):
+    return math.sqrt(2*math.pi*n) * (n / math.e)**n * (1 + 1 / math.sqrt(52*math.e*n))
+
+
+print(fact_math(n))
