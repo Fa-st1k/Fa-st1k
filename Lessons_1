@@ -1,0 +1,48 @@
+import math
+import time
+
+
+n = 998
+
+tic = time.perf_counter()
+print("math", math.factorial(n))
+toc = time.perf_counter()
+print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
+
+tic = time.perf_counter()
+def fac(n):
+    if n == 1:
+        return 1
+    return fac(n - 1) * n
+
+print("Def ",fac(n))
+toc = time.perf_counter()
+print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
+
+
+tic = time.perf_counter()
+factorial = 1
+while n > 1:
+    factorial *= n
+    n -= 1
+print("while ", factorial)
+toc = time.perf_counter()
+print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
+
+
+tic = time.perf_counter()
+
+def factorial3(n):
+    factorial2 = 1
+    for i in range(1, n + 1):
+        factorial2 *= i
+    return factorial2
+
+
+print("for ",factorial3(998))
+
+toc = time.perf_counter()
+print(f"Вычисление заняло {toc - tic:0.4f} секунд")
