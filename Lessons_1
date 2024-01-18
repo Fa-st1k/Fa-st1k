@@ -46,3 +46,6 @@ print("for ",factorial3(998))
 
 toc = time.perf_counter()
 print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
+
+# 
